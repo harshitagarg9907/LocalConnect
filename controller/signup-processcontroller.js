@@ -3,8 +3,6 @@ const signupColRef = require("../models/signupmodel");
 const bcrypt = require("bcryptjs");
 const transporter = require("../config/mailconfig");
 
-
-
 async function dosignup(req, resp) {
     try {
 

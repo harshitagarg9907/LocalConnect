@@ -52,8 +52,8 @@ async function dologin(req, resp) {
             });
         }
 
-        let jtoken=jwt.sign({emailid:req.body.email},process.env.SEC_KEY,{expiresIn:"15m"});
-                console.log(jtoken);
+       let jtoken = jwt.sign({ emailid: result.emailid }, process.env.SEC_KEY, { expiresIn: "15m" });     
+        console.log(jtoken);
 
         // Login successful
         return resp.json({
