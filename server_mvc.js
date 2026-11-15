@@ -12,7 +12,7 @@ let app=express();
 
 var fileuploader=require("express-fileupload");
 app.use(fileuploader());
-app.use(cors( {origin:"https://local-connectfrontend-eosin.vercel.app/",credentials:true}));
+app.use(cors( {origin:"https://local-connectfrontend-eosin.vercel.app",credentials:true}));
 app.use(express.json());
 require('dotenv').config();//reading .env file
 domongooseconnection();
