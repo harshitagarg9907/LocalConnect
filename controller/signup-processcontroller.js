@@ -105,7 +105,15 @@ async function dosignup(req, resp) {
         // Send welcome email
         try {
 //This code uses Nodemailer to send a welcome email to the user after successful signup.
-            await transporter.sendMail({
+
+     
+  resp.json({
+            status: true,
+            msg: "Signup successful"
+        });
+
+
+await transporter.sendMail({
                 from: `"LocalConnect" <${process.env.EMAIL_USER}>`,//In JavaScript, the $ symbol is used in template literals to insert variables or expressions inside a string.
                 to: email,//Specifies the recipient's email address.
                 subject: "Welcome to LocalConnect!",
@@ -121,11 +129,7 @@ async function dosignup(req, resp) {
         }
 
         // Send response
-       
- return resp.json({
-            status: true,
-            msg: "Signup successful"
-        });
+  
     }
    catch (err) {
 
