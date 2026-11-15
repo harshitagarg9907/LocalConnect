@@ -114,17 +114,18 @@ async function dosignup(req, resp) {
 
             console.log("Welcome email sent successfully");
 
+            
         }
         catch (mailErr) {
             console.log("Email sending failed:", mailErr.message);
         }
 
         // Send response
-        return resp.json({
+       
+ return resp.json({
             status: true,
             msg: "Signup successful"
         });
-
     }
    catch (err) {
 

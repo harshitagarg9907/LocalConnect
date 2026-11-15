@@ -52,7 +52,7 @@ async function dologin(req, resp) {
             });
         }
 
-        let jtoken=jwt.sign({emailid:req.body.emailid},process.env.SEC_KEY,{expiresIn:"15m"});
+        let jtoken=jwt.sign({emailid:req.body.email},process.env.SEC_KEY,{expiresIn:"15m"});
                 console.log(jtoken);
 
         // Login successful
