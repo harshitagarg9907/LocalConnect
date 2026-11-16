@@ -1,3 +1,4 @@
+require('dotenv').config();//reading .env file
 var express=require("express");
 var cors=require("cors")
 var {domongooseconnection}=require("./config/mongooseconnect");
@@ -14,7 +15,7 @@ var fileuploader=require("express-fileupload");
 app.use(fileuploader());
 app.use(cors( {origin:"https://local-connectfrontend-eosin.vercel.app",credentials:true,allowedHeaders: ["Content-Type", "Authorization"]}));
 app.use(express.json());
-require('dotenv').config();//reading .env file
+
 domongooseconnection();
 
 app.use(express.urlencoded({ extended: true }));//convert POST data to JSON object
