@@ -24,7 +24,8 @@ app.use("/citizenrouter",citizenrouter);
 app.use("/citizendashboardrouter",citizendashboardrouter);
 app.use("/signup",signuprouter);
 app.use("/login",loginrouter);
-app.listen(2010,function(req,resp)
+const PORT = process.env.PORT || 2010;
+app.listen(PORT,function()
 {
     console.log("server started");
 })
