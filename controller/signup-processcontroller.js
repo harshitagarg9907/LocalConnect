@@ -104,11 +104,7 @@ async function dosignup(req, resp) {
         try {
 //This code uses Nodemailer to send a welcome email to the user after successful signup.
 
-     
-  resp.json({
-            status: true,
-            msg: "Signup successful"
-        });
+ 
 
 
 await transporter.sendMail({
@@ -127,7 +123,11 @@ await transporter.sendMail({
         }
 
         // Send response
-  
+      
+  resp.json({
+            status: true,
+            msg: "Signup successful"
+        });
     }
    catch (err) {
 
