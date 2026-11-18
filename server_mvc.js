@@ -13,7 +13,15 @@ let app=express();
 
 var fileuploader=require("express-fileupload");
 app.use(fileuploader());
-app.use(cors( {origin:"https://local-connectfrontend-eosin.vercel.app",credentials:true,allowedHeaders: ["Content-Type", "Authorization"]}));
+
+app.use(cors({
+  origin: [
+    "https://local-connectfrontend-eosin.vercel.app",
+    "http://localhost:5173"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 domongooseconnection();
